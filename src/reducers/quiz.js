@@ -5,7 +5,7 @@ const questions = [
   { id: 1,
     questionText: 'Which island nation is popstar Rihanna from?',
     options: ['Jamaica', 'Barbados', 'Dominican Republic', 'Haiti'],
-    correctAnswerIndex: 1
+    correctAnswerIndex: 1,
   },
   { id: 2,
     questionText: 'What is the collective noun for a group of Unicorns?',
