@@ -57,8 +57,3 @@ export const CurrentQuestion = () => {
     </>
   )
 }
-
-// To calculate how many correct answers:
-// const correctAnswers = useSelector((state) =>
-//     state.quiz.answers.filter((a) => a.isCorrect === true).length
-//   )
