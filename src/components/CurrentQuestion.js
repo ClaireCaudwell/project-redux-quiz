@@ -2,6 +2,8 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { quiz } from '../reducers/quiz'
 
+import { Summary } from './Summary'
+
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
   const answer = useSelector((state) => state.quiz.answers.find((a) => a.questionId === question.id))
@@ -33,7 +35,7 @@ export const CurrentQuestion = () => {
   }
 
   if (isQuizOver) {
-    return <h1>Summary Page - replace with a Summary component (include restart button in summary</h1>
+    return <Summary />
   }
 
   return (

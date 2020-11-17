@@ -3,14 +3,29 @@ import { createSlice } from '@reduxjs/toolkit'
 // Change these to your own questions!
 const questions = [
   { id: 1,
-    questionText: 'Who set the Olympic record for the 100m dash in 2012?',
-    options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'],
-    correctAnswerIndex: 0
+    questionText: 'Which island nation is popstar Rihanna from?',
+    options: ['Jamaica', 'Barbados', 'Dominican Republic', 'Haiti'],
+    correctAnswerIndex: 1
   },
   { id: 2,
-    questionText: 'When was Michael Phelps last named male World Swimmer of the Year?',
-    options: ['2012', '2014', '2016', '2018'],
+    questionText: 'What is the collective noun for a group of Unicorns?',
+    options: ['Unicornia', 'A school', 'Team of devs + designers', 'A blessing'],
+    correctAnswerIndex: 3
+  },
+  { id: 3,
+    questionText: 'What is the cross between a donkey and a zebra known as?',
+    options: ['Zenkey', 'Denkey', 'Zeedonk', 'Wonkze'],
     correctAnswerIndex: 2
+  },
+  { id: 4,
+    questionText: "What is Scooby Doo's full name?",
+    options: ['Scoobert Doo', 'Mr Scooby D', 'Scooby Doody', 'Scobiculus Doo'],
+    correctAnswerIndex: 0
+  },
+  { id: 5,
+    questionText: 'How many letters in the word Hippopotamus?',
+    options: ['11', '12', '10', '13'],
+    correctAnswerIndex: 1
   }
 ]
 
