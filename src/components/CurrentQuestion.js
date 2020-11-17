@@ -1,16 +1,62 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { quiz } from '../reducers/quiz'
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
+  const answer = useSelector((state) => state.quiz.answers.find((a) => a.questionId === question.id))
+  const isQuizOver = useSelector((state) => state.quiz.quizOver)
+
+  const dispatch = useDispatch()
+
+  const submitAnswer = (id, index) => {
+    dispatch(quiz.actions.submitAnswer({
+      questionId: id,
+      answerIndex: index
+    }))
+  }
+
+  const handleNext = () => {
+    dispatch(quiz.actions.goToNextQuestion())
+  }
+
+  const statusAnswer = () => {
+    if (answer.isCorrect) {
+      return 'right'
+    } else {
+      return 'wrong'
+    }
+  }
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
   }
 
+  if (isQuizOver) {
+    return <h1>Summary Page - replace with a Summary component (include restart button in summary</h1>
+  }
+
   return (
-    <div>
+    <>
       <h1>Question: {question.questionText}</h1>
-    </div>
+      <div>
+        {question.options.map((option, index) => (
+          <button key={index} type="button" onClick={() => { submitAnswer(question.id, index) }}>{option}</button>
+        ))}
+      </div>
+
+      {answer &&
+        <div>
+          <p>{`The answer is ${statusAnswer()}, please go to the next question`}</p>
+          <button type="submit" onClick={handleNext}>Next question</button>
+        </div>}
+
+      <p>Question {question.id}/5</p>
+    </>
   )
 }
+
+// To calculate how many correct answers:
+// const correctAnswers = useSelector((state) =>
+//     state.quiz.answers.filter((a) => a.isCorrect === true).length
+//   )
