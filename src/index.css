@@ -92,3 +92,13 @@ header {
 .summary-image {
   border: 4px solid #42dbfb;
 }
+
+footer {
+  text-align: center;
+  background-color: rgba(0, 0, 0, .9);
+  width: 800px;
+  margin: auto;
+  padding: 20px 0;
+  color: white;
+  margin-bottom: 40px;
+}

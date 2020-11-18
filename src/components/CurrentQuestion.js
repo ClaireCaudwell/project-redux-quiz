@@ -4,6 +4,7 @@ import { quiz } from '../reducers/quiz'
 
 import { Summary } from './Summary'
 import { Header } from './Header'
+import { Footer } from './Footer'
 import rihanna from './assets/rihanna_img.jpeg'
 import unicorns from './assets/Unicorn.jpg'
 import zedonkey from './assets/Zedonkey.jpg'
@@ -90,6 +91,7 @@ export const CurrentQuestion = () => {
 
         <p className="question-progress">Question {question.id}/5</p>
       </section>
+      <Footer />
     </>
   )
 }
