@@ -1,4 +1,4 @@
-# Redux quiz group project
+# Redux quiz group project 🎲
 
 The task was to build a quiz game using Redux. Working as a team to use the state to render the quiz questions one at a time.The user clickes the answer and gets to know if its is correct or not before moving forward to the next question. After answering the five questions the user gets a summary and a chance to do the quiz again.
 
