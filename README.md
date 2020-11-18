@@ -9,3 +9,4 @@ The main problem was to understand the flow of Redux and figuring out how many c
 ## View it live
 
 https://vibrant-kirch-914d32.netlify.app/
+
