@@ -60,6 +60,7 @@ header {
   background-color: black;
   color: white;
   padding: 7px;
+  cursor: pointer;
 }
 
 .answer-text {
@@ -86,4 +87,8 @@ header {
 
 .summary-container {
   margin-top: 40px;
+}
+
+.summary-image {
+  border: 4px solid #42dbfb;
 }

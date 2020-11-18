@@ -5,7 +5,7 @@ import happyImg from './assets/happy-img.gif'
 export const HappyImage = () => {
   return (
     <>
-      <img src={happyImg} alt="Happy Lady with Confetti" />
+      <img className="question-image summary-image" src={happyImg} alt="Happy Lady with Confetti" />
     </>
   )
 }

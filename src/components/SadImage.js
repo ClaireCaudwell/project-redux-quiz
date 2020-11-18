@@ -5,7 +5,7 @@ import sadImg from './assets/sad-img.gif'
 export const SadImage = () => {
   return (
     <>
-      <img src={sadImg} alt="Seth Meyers gif" />
+      <img className="question-image summary-image" src={sadImg} alt="Seth Meyers gif" />
     </>
   )
 }
