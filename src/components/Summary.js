@@ -23,11 +23,11 @@ export const Summary = () => {
   }
 
   return (
-    <>
-      <h1>Well done, you have completed our super difficult quiz!</h1>
+    <section className="main-container summary-container">
+      <h1 className="summary-text">Well done, you have completed our super difficult quiz!</h1>
       <div>{finalImage()}</div>
-      <p>{`You've got ${correctAnswers} out of 5.`}</p>
-      <button type="button" onClick={restart}>RESTART</button>
-    </>
+      <p className="scoretext">{`You've got ${correctAnswers} out of 5.`}</p>
+      <button className="next-button" type="button" onClick={restart}>RESTART</button>
+    </section>
   )
 }
