@@ -58,22 +58,22 @@ export const CurrentQuestion = () => {
   }
 
   return (
-    <>
+    <section className="main-container">
       <h1>Question: {question.questionText}</h1>
       <img src={imageSelector()} alt="Rihanna" />
-      <div>
+      <div className="buttons-container">
         {question.options.map((option, index) => (
           <button key={index} type="button" onClick={() => { submitAnswer(question.id, index) }}>{option}</button>
         ))}
       </div>
 
       {answer &&
-        <div>
+        <div className="next-question-container">
           <p>{`The answer is ${statusAnswer()}, please go to the next question`}</p>
           <button type="submit" onClick={handleNext}>Next question</button>
         </div>}
 
       <p>Question {question.id}/5</p>
-    </>
+    </section>
   )
 }
