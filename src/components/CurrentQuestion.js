@@ -63,7 +63,7 @@ export const CurrentQuestion = () => {
       <Header />
       <section className="main-container">
         <h1 className="question-text">Question: {question.questionText}</h1>
-        <img src={imageSelector()} alt="Rihanna" />
+        <img className="question-image" src={imageSelector()} alt="Question related pic" />
         <div className="buttons-container">
           {question.options.map((option, index) => (
             <button className="answer-buttons" key={index} type="button" onClick={() => { submitAnswer(question.id, index) }}>{option}</button>
@@ -72,11 +72,11 @@ export const CurrentQuestion = () => {
 
         {answer &&
           <div className="next-question-container">
-            <p>{`The answer is ${statusAnswer()}, please go to the next question`}</p>
-            <button type="submit" onClick={handleNext}>Next question</button>
+            <p className="answer-text">{`The answer is ${statusAnswer()}, please go to the next question`}</p>
+            <button className="next-button" type="submit" onClick={handleNext}>NEXT</button>
           </div>}
 
-        <p>Question {question.id}/5</p>
+        <p className="question-progress">Question {question.id}/5</p>
       </section>
     </>
   )
