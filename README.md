@@ -1,13 +1,11 @@
 # Redux quiz group project
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The task was to build a quiz game using Redux. Working as a team to use the state to render the quiz questions one at a time.The user clickes the answer and gets to know if its is correct or not before moving forward to the next question. After answering the five questions the user gets a summary.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The main problem was to understand the flow of Redux and figuring out how many components we needed and where to store them.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://vibrant-kirch-914d32.netlify.app/
