@@ -11,12 +11,16 @@ import scooby from './assets/scooby-doo.png'
 import hippo from './assets/hippo_img.jpg'
 
 export const CurrentQuestion = () => {
+  // selectors to be able to access the data in our store
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
   const answer = useSelector((state) => state.quiz.answers.find((a) => a.questionId === question.id))
   const isQuizOver = useSelector((state) => state.quiz.quizOver)
 
   const dispatch = useDispatch()
 
+  // Function called when an answer button is clicked, this function will
+  // dispatch the submitAnswer action which is one of our reducers
+  // we send in an object with the payload required: question id and answer index
   const submitAnswer = (id, index) => {
     dispatch(quiz.actions.submitAnswer({
       questionId: id,
@@ -24,10 +28,14 @@ export const CurrentQuestion = () => {
     }))
   }
 
+  // function to dispatch the action goToNextQuestion which is a reducer
+  // and will render the next question by updating the current question index
   const handleNext = () => {
     dispatch(quiz.actions.goToNextQuestion())
   }
 
+  // Function that will show whether the user chose the correct answer or not
+  // this variable will be shown with template literals in side the <p className="answer-text">
   const statusAnswer = () => {
     if (answer.isCorrect) {
       return 'right'
@@ -36,6 +44,7 @@ export const CurrentQuestion = () => {
     }
   }
 
+  // Function to pick which image to show, based on the question id
   const imageSelector = () => {
     if (question.id === 1) {
       return rihanna
@@ -54,6 +63,9 @@ export const CurrentQuestion = () => {
     return <h1>Oh no! I could not find the current question!</h1>
   }
 
+  // if the property isQuizOver is true, we should show the summary page
+  // we get this data from one of our selectors, which accesses this
+  // property from the state.quiz object
   if (isQuizOver) {
     return <Summary />
   }

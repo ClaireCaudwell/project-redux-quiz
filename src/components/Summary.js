@@ -6,6 +6,8 @@ import { HappyImage } from './HappyImage'
 import { SadImage } from './SadImage'
 
 export const Summary = () => {
+  // selector to get the amount of correct answers the user got, we get this data from the
+  // answers array inside the main state.quiz object
   const correctAnswers = useSelector((state) => state.quiz.answers.filter((answer) => answer.isCorrect === true).length)
 
   const dispatch = useDispatch()
@@ -14,6 +16,7 @@ export const Summary = () => {
     dispatch(quiz.actions.restart())
   }
 
+  // Function to show an image depending on the amount of correct answers the user got
   const finalImage = () => {
     if (correctAnswers === 5) {
       return <HappyImage />
