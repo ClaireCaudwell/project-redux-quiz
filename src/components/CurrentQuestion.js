@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { quiz } from '../reducers/quiz'
 
 import { Summary } from './Summary'
-import Header from './Header'
 import rihanna from './assets/rihanna_img.jpeg'
 import unicorns from './assets/Unicorn.jpg'
 import zedonkey from './assets/Zedonkey.jpg'
@@ -37,7 +36,7 @@ export const CurrentQuestion = () => {
   }
 
   const imageSelector = () => {
-    if (question.id === 1){
+    if (question.id === 1) {
       return rihanna
     } else if (question.id === 2) {
       return unicorns
@@ -60,24 +59,21 @@ export const CurrentQuestion = () => {
 
   return (
     <>
-      <Header />
-      <main>
-        <h1>Question: {question.questionText}</h1>
-        <img src={imageSelector()} alt="Rihanna"/>
+      <h1>Question: {question.questionText}</h1>
+      <img src={imageSelector()} alt="Rihanna" />
+      <div>
+        {question.options.map((option, index) => (
+          <button key={index} type="button" onClick={() => { submitAnswer(question.id, index) }}>{option}</button>
+        ))}
+      </div>
+
+      {answer &&
         <div>
-          {question.options.map((option, index) => (
-            <button key={index} type="button" onClick={() => { submitAnswer(question.id, index) }}>{option}</button>
-          ))}
-        </div>
+          <p>{`The answer is ${statusAnswer()}, please go to the next question`}</p>
+          <button type="submit" onClick={handleNext}>Next question</button>
+        </div>}
 
-        {answer &&
-          <div>
-            <p>{`The answer is ${statusAnswer()}, please go to the next question`}</p>
-            <button type="submit" onClick={handleNext}>Next question</button>
-          </div>}
-
-        <p>Question {question.id}/5</p>
-        </main>
+      <p>Question {question.id}/5</p>
     </>
   )
 }
